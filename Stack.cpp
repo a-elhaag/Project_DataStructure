@@ -42,7 +42,7 @@ int Stack::peek()
 {
 	if (is_empty())
 	{
-		cout << "Stack is empty" << endl;
+		cout << "Tower is empty" << endl;
 		return -1;
 	}
 	else
@@ -65,7 +65,11 @@ void Stack::display()
 {
 	if (is_empty())
 	{
-		cout << "Stack is empty" << endl;
+		for (int i = 0; i < size; i++)
+		{
+			Functions::print_success("||");
+			cout << endl;
+		}
 	}
 	else
 	{
@@ -73,7 +77,7 @@ void Stack::display()
 		{
 			for (int j = 0; j <= i; j++)
 			{
-				Functions::print("#");
+				Functions::print_success("#");
 			}
 			cout << endl;
 		}

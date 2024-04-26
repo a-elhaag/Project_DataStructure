@@ -2,10 +2,12 @@
 #include "Functions.h"
 #include "Stack.h"
 #include "Tower_of_Hanoi.h"
+#include<limits>
 #include <windows.h>
 #include <conio.h> // Add this header for _getch() function
 
 using namespace std;
+
 
 int main() {
 
@@ -19,14 +21,28 @@ int main() {
 	Functions::print("Welcome to the Tower of Hanoi\n\n\n");
 
 	Functions::print("press any key to continue...");
-	_getch(); // Wait for a key press without requiring Enter
-
-	system("cls");
-
-	Functions::print("Enter the number of disks: ");
-	int num = Functions::check_int();
-	Tower_of_Hanoi	Game(num);
+	_getch();
+    system("cls");
 
 
+    bool continuePlaying = true;
+
+    while (continuePlaying) {
+        Functions::print("Enter the number of disks: ");
+        int num = Functions::check_int();
+        Tower_of_Hanoi game(num);
+		cout << endl;
+        Functions::print("press any key to continue...");
+        _getch(); 
+        system("cls");
+
+        Functions::print("\n\nPress N to exit:\n\n");
+        system("cls");
+        char choice = _getch();
+
+        if (choice == 'N' || choice == 'n') {
+            continuePlaying = false;
+        }
+    }
 	return 0;
 }
