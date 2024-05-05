@@ -25,6 +25,6 @@ public:
     void display();
     int get_size();
     int get_top();
-    string getName();
+	string getName() { return name; } 
 };
 

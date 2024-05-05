@@ -61,31 +61,31 @@ bool Stack::is_full()
 	return top == size - 1;
 }
 
-void Stack::display()
+void Stack::display() // Display the state of the towers using '#' and '||'
 {
-	if (is_empty())
-	{
-		for (int i = 0; i < size; i++)
-		{
-			Functions::print_success("||");
-			cout << endl;
-		}
-	}
-	else
-	{
-		for (int i = 0; i <= top; i++)
-		{
-			for (int j = 0; j <= i; j++)
-			{
-				Functions::print_success("#");
-			}
-			cout << endl;
-		}
-		cout << endl;
-	}
+    if (is_empty())
+    {
+        for (int i = 0; i < size; i++)
+        {
+            Functions::print_success("||");
+            cout << endl;
+        }
+    }
+    else
+    {
+        for (int i = top; i >=0; i--)
+        {
+            for (int j = stack[i]; j > 0; j--) 
+            {
+                Functions::print_success("#");
+            }
+            cout << endl;
+        }
+        cout << endl;
+    }
 }
 
-int Stack::get_size()
+int Stack::get_size() // Return the size of the tower
 {
 	return size;
 }
@@ -95,7 +95,3 @@ int Stack::get_top()
 	return top;
 }
 
-string Stack::getName()
-{
-	return name;
-}
