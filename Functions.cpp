@@ -104,13 +104,21 @@ void Functions::draw_stack() {
 // Function to check if the input is an integer
 int Functions::check_int() {
 	int num;
-	while (!(cin >> num) || cin.peek() != '\n') {
-		cin.clear();
-		cin.ignore();
-		print_error("Invalid input. Please enter an integer: ");
+	while (true) { // Loop indefinitely until valid input
+		cin >> num;
+		if (cin.fail()) { // Check if input failed
+			cin.clear();
+			cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n'); // Clear error state, discard invalid input
+			print_error("Invalid input. Please enter an integer: ");
+		} else if (num <= 0) {  // Check if the number is less than or equal to 0
+			print_error("Invalid input. Please enter a number greater than 0: ");
+		} else {  // Valid input 
+			break; // Exit the loop
+		}
 	}
 	return num;
 }
+
 
 //int Functions::check_int(int min, int max) {
 //    int input;
