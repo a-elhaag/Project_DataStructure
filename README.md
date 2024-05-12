@@ -3,7 +3,7 @@
 This is a console-based Tower of Hanoi game implemented in C++. The game allows players to solve the classic Tower of Hanoi puzzle by moving disks between three towers.
 
 ## How to Play
-Download the latest installer here: [Project_DataStructure.exe](Project_DataStructure.exe)
+Download here: [Project_DataStructure.exe](Project_DataStructure.exe)
 
 ## OR
 
